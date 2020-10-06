@@ -1,0 +1,36 @@
+
+{% extends "index.html" %}
+
+{% block basetemp %}
+
+
+<p>Yo {{user}}, we are on the mountains!!!</p>
+<form class="form-horizontal col-xs-12 col-lg-12 col-md-12 col-sm-12" method="POST" action="{{url_for('updatedb')}}" name="wform">
+	<label>Name</label>
+	<input type="text" class="form-control" id="lname" placeholder="name" name="name" required>
+	<label>Address</label>
+	<input type="text" class="form-control" id="address" placeholder="address" name="address" required>
+	<button type="submit" class="btn btn-primary btn-md">Submit</button>
+</form>
+</form>
+<div class="container">
+	<table class="table table-hover">
+		<tr>
+			<td class="info">Account_number</td>
+			<td class="info">Account_name</td>
+			<td class="info">Datetime_creation</td>
+		</tr>
+	{% for x in userlist %}
+		<tr>
+			<td>{{x["_id"]}}</td>
+			<td>{{x["Account_name"]}}</td>
+			<td>{{x["Datetime_creation"]}}</td>
+		</tr>
+	{% endfor %}
+</table>
+
+<h1>Getting
+
+
+
+{% endblock %}
